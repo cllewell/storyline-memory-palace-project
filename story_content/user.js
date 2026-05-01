@@ -131,7 +131,8 @@ var answer2 = stripAll(player.GetVar("Answertwo"));
 var answer3 = keepOne(player.GetVar("Answerthree"));
 var answer4 = stripAll(player.GetVar("Answerfour"));
 var answer5 = stripAll(player.GetVar("Answerfive"));
-var answer6 = keepOne(player.GetVar("Answersix"));
+var userKeep6 = keepOne(player.GetVar("Answersix"));
+var userStrip6 = stripAll(player.GetVar("Answersix"));
 var answer7 = keepOne(player.GetVar("Answerseven"));
 var answer8 = stripAll(player.GetVar("Answereight"));
 var answer9 = stripAll(player.GetVar("Answernine"));
@@ -147,7 +148,7 @@ var correctAnswer2 = "smartphone";
 var correctAnswer3 = "fitness tracker";
 var correctAnswer4 = "tablet";
 var correctAnswer5 = "drone";
-var correctAnswer6 = "power bank";
+correctAnswer6 = ["power bank", "powerbank"];
 var correctAnswer7 = "virtual reality headset";
 var correctAnswer8 = "smartglasses";
 var correctAnswer9 = "smartwatch";
@@ -174,7 +175,7 @@ if (answer5 === correctAnswer5) {
     score += 1;
     player.SetVar("Correctfive", true);
 }
-if (answer6 === correctAnswer6) {
+if (correctAnswer6.includes(userKeep6) || correctAnswer6.includes(userStrip6)) {
     score += 1;
     player.SetVar("Correctsix", true);
 }
